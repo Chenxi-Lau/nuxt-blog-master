@@ -9,7 +9,10 @@
 <template>
   <div class="header-container">
     <div>
-      <el-avatar size="large" :src="circleUrl"></el-avatar>
+      <el-avatar
+        size="large"
+        :src="circleUrl"
+      ></el-avatar>
       <h4>GoodMorning</h4>
       <h5>纸上得来终觉浅，绝知此事要躬行</h5>
       <ul class="menu">
@@ -79,6 +82,12 @@ export default {
       display: inline-block;
       margin: 20px;
       list-style: none;
+      .el-icon-edit {
+        display: block;
+        line-height: 2;
+        margin-right: 0;
+        width: 100%;
+      }
     }
   }
 }
