@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-22 09:07:32
+ * @LastEditTime: 2020-09-22 15:06:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nuxt-blog-master\nuxt-blog-master\server\index.js
+ */
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
@@ -27,7 +35,8 @@ async function start () {
   // Listen the server
   app.listen(port, host)
   consola.ready({
-    message: `Server listening on http://${host}:${port}`,
+    message: `Server listening on
+              -local: http://${host}:${port}`,
     badge: true
   })
 }

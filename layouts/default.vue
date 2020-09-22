@@ -1,8 +1,26 @@
+<!--
+ * @Author: liuchenxi
+ * @Date: 2020-09-22 09:07:32
+ * @LastEditTime: 2020-09-22 15:10:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nuxt-blog-master\layouts\default.vue
+-->
 <template>
   <div>
+    <my-header />
     <nuxt />
   </div>
 </template>
+
+<script>
+import MyHeader from '../components/header'
+export default {
+  components: {
+    MyHeader
+  }
+}
+</script>
 
 <style>
 html {
