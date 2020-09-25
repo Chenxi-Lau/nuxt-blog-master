@@ -1,7 +1,7 @@
 <!--
  * @Author: liuchenxi
  * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-22 15:10:58
+ * @LastEditTime: 2020-09-25 21:06:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\layouts\default.vue
@@ -33,6 +33,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #b3e6e2;
 }
 
 *,

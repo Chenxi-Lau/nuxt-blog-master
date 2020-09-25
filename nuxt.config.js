@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-22 09:07:32
+ * @LastEditTime: 2020-09-25 15:37:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nuxt-blog-master\nuxt.config.js
+ */
 
 module.exports = {
   mode: 'universal',
@@ -23,13 +31,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/iconfont.css' // iconfont
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    { src: '@/assets/js/iconfont.js', ssr: false } // iconfont
   ],
   /*
   ** Nuxt.js modules
