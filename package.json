@@ -2,7 +2,7 @@
   "name": "blog-nuxt",
   "version": "1.0.0",
   "description": "Nuxt.js + Mysql + Express.js",
-  "author": "ChenxiLiu",
+  "author": "ChenxiLiu<lcxcsy@126.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "express": "^4.16.4",

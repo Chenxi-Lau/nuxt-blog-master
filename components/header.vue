@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-22 14:52:35
- * @LastEditTime: 2020-09-25 21:18:03
+ * @LastEditTime: 2020-09-27 09:17:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\components\header.vue
@@ -74,7 +74,7 @@ export default {
     height: 100px;
   }
   .menu {
-    width: 600px;
+    width: 100%;
     margin: 20px 0px;
     padding-left: 0px;
     .menu-item {

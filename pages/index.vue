@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-22 09:07:32
+ * @LastEditTime: 2020-09-27 15:27:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \nuxt-blog-master\pages\index.vue
+-->
 <template>
   <div class="container">
     <div>
@@ -9,18 +17,10 @@
         Nuxt.js + Mysql + Express.js
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
+        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
         </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
+        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">
           GitHub
         </a>
       </div>
@@ -29,11 +29,27 @@
 </template>
 
 <script>
+import { handleLogin } from '@/api/index.js'
 import Logo from '~/components/Logo.vue'
-
 export default {
+  name: 'main-page',
   components: {
     Logo
+  },
+  mounted () {
+    this.handleLogin()
+  },
+  methods: {
+    async handleLogin () {
+      try {
+        const res = await handleLogin()
+        if (res.code == '0') {
+          console.log(res)
+        }
+      } catch (err) {
+        console.log(err, '登录失败')
+      }
+    }
   }
 }
 </script>

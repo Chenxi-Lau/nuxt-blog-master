@@ -1,18 +1,18 @@
 /*
  * @Author: liuchenxi
  * @Date: 2020-09-25 22:19:03
- * @LastEditTime: 2020-09-25 22:40:49
+ * @LastEditTime: 2020-09-27 15:54:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\server\model\config.js
  */
-import mysql from 'mysql'
+let mysql = require('mysql')
 
 let pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'liuchenxi0428@',
-  database: 'trip'
+  password: 'liuchenxi0428',
+  database: 'blog-nuxt'
 })
 
 let query = function (sql, params, callback) {
