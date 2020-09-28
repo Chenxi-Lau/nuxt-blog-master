@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-22 14:52:35
- * @LastEditTime: 2020-09-27 09:17:49
+ * @LastEditTime: 2020-09-28 20:12:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\components\header.vue
@@ -64,7 +64,7 @@ export default {
 <style lang="less" scoped>
 .header-container {
   width: 100%;
-  height: 400px;
+  height: 360px;
   text-align: center;
   display: flex;
   align-items: center;

@@ -1,14 +1,14 @@
 /*
- * @Author: your name
+ * @Author: liuchenxi
  * @Date: 2020-09-27 09:07:26
- * @LastEditTime: 2020-09-27 16:22:34
+ * @LastEditTime: 2020-09-28 11:36:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\server\api\user.js
  */
 let express = require('express')
 let router = express.Router()
-let db = require('../config.js')
+import db from '../config.js'
 
 router.get('/login', (req, res) => {
   db.query('SELECT * FROM user', [], function (err, data) {

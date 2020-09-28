@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-27 15:27:41
+ * @LastEditTime: 2020-09-28 16:05:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\pages\index.vue
@@ -43,6 +43,7 @@ export default {
     async handleLogin () {
       try {
         const res = await handleLogin()
+        console.log(res)
         if (res.code == '0') {
           console.log(res)
         }
