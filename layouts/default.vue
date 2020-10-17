@@ -1,7 +1,7 @@
 <!--
  * @Author: liuchenxi
  * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-28 20:59:11
+ * @LastEditTime: 2020-10-09 15:37:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\layouts\default.vue
@@ -10,14 +10,17 @@
   <div>
     <my-header />
     <nuxt />
+    <my-footer />
   </div>
 </template>
 
 <script>
 import MyHeader from '../components/header'
+import MyFooter from '../components/footer'
 export default {
   components: {
-    MyHeader
+    MyHeader,
+    MyFooter
   }
 }
 </script>
@@ -33,7 +36,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background: #b3e6e2;
+  background: #100e17;
 }
 
 *,
@@ -41,34 +44,5 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
 }
 </style>

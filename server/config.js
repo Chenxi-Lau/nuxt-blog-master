@@ -1,7 +1,7 @@
 /*
  * @Author: liuchenxi
  * @Date: 2020-09-25 22:19:03
- * @LastEditTime: 2020-09-28 11:36:17
+ * @LastEditTime: 2020-09-29 09:08:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\server\model\config.js
@@ -28,7 +28,7 @@ let query = function (sql, params, callback) {
         connection.release()
         if (err) {
           console.error('db error17:' + err)
-          return callback(true)
+          return callback(true, err)
         }
         callback(false, result)
       })

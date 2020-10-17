@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-28 16:44:28
+ * @LastEditTime: 2020-09-29 16:12:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\nuxt-blog-master\server\index.js
@@ -9,21 +9,15 @@
 import express from 'express'
 import consola from 'consola'
 import { Nuxt, Builder } from 'nuxt'
-const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const app = express()
 const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
 
-app.set('port', port)
-
+// app.set('port', port)
+app.proxy = true
 // Import API Routes
 let api = require('./api/index')(app)
-
-app.use('/api', createProxyMiddleware({
-  target: 'http://localhost:8080',
-  changeOrigin: true
-}))
 
 async function start () {
   // Import and Set Nuxt.js options

@@ -1,7 +1,7 @@
 /*
  * @Author: liuchenxi
  * @Date: 2020-09-27 09:07:26
- * @LastEditTime: 2020-09-28 15:05:08
+ * @LastEditTime: 2020-09-30 11:39:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\nuxt-blog-master\server\models\articles.js
@@ -23,32 +23,32 @@ export default class Article {
       if (err) {
         return callback(true, err)
       }
-      callback(false, result)
+      callback(null, result)
     })
   }
 
-  // 根据文章ID获取文章详情
-  getArticlesById (postId, callback) {
-    let sql = 'SELECT * FROM articles where id = ?'
-    db.query(sql, [postId], (err, result) => {
+  // 根据文章ID获取文章详情, params为文章的id
+  getArticleById (params, callback) {
+    let sql = `SELECT * FROM articles where id = '${params.id}'`
+    db.query(sql, [], (err, result) => {
       if (err) {
-        return callback(true)
+        return callback(true, err)
       }
-      callback(false, result)
+      callback(null, result)
     })
   }
 
   // 获取Post总数
-  getTotal (scope, callback) {
-    let sql = 'SELECT COUNT(id) AS count FROM posts'
-    if (scope === 'published') {
-      sql += ` WHERE status = '${scope}'`
+  getTotal (params, callback) {
+    let sql = 'SELECT COUNT(id) AS count FROM articles'
+    if (params.status === 'published') {
+      sql += ` WHERE status = '${params.status}'`
     }
     db.query(sql, [], (err, result) => {
       if (err) {
-        return callback(true)
+        return callback(true, err)
       }
-      callback(false, result[0].count)
+      callback(null, result[0].count)
     })
   }
 }

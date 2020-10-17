@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-22 14:52:35
- * @LastEditTime: 2020-09-28 20:12:11
+ * @LastEditTime: 2020-10-10 09:37:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\components\header.vue
@@ -12,14 +12,14 @@
       <el-avatar size="large" :src="circleUrl"></el-avatar>
       <h4>GoodMorning</h4>
       <h5>纸上得来终觉浅，绝知此事要躬行</h5>
-      <ul class="menu">
-        <li class="menu-item" v-for="(item,index) in tags" :key="index">
-          <a :href="item.href" class="item-link">
+      <ul class="header-title">
+        <li class="header-subtitle" v-for="(item,index) in tags" :key="index">
+          <nuxt-link :to="item.href" class="subtitle-link">
             <svg class="icon" aria-hidden="true">
               <use :xlink:href="item.class"></use>
             </svg>
             {{item.name}}
-          </a>
+          </nuxt-link>
         </li>
       </ul>
       <el-divider></el-divider>
@@ -44,11 +44,11 @@ export default {
           class: '#icon-wenzhanglan'
         }, {
           name: '标签',
-          href: '/article',
+          href: '/tags',
           class: '#icon-biaoqianpai'
         }, {
           name: '关于',
-          href: '/article',
+          href: '/about',
           class: '#icon-nb-'
         }, {
           name: '搜索',
@@ -69,20 +69,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(233, 222, 222);
   .el-avatar--large {
     width: 100px;
     height: 100px;
   }
-  .menu {
+  .header-title {
     width: 100%;
     margin: 20px 0px;
     padding-left: 0px;
-    .menu-item {
+    .header-subtitle {
       display: inline-block;
       margin: 0 36px;
       list-style: none;
-      .item-link {
-        color: #555;
+      .subtitle-link {
+        color: #ef5246;
         outline: 0;
         text-decoration: none;
         overflow-wrap: break-word;

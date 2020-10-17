@@ -1,7 +1,7 @@
 /*
  * @Author: liuchenxi
  * @Date: 2020-09-22 15:54:56
- * @LastEditTime: 2020-09-27 15:14:57
+ * @LastEditTime: 2020-09-29 15:50:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\api\httpInstance.js
@@ -16,7 +16,10 @@ const baseURL = {
 const http = axios.create({
   timeout: 20000,
   withCredentials: true,
-  headers: { 'X-Requested-With': 'XMLHttpRequest' },
+  headers: {
+    'X-Requested-With': 'XMLHttpRequest',
+    'Content-Type': 'application/json;charset=utf-8'
+  },
   baseURL
 })
 

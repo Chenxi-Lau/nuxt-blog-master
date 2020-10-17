@@ -1,7 +1,7 @@
 /*
- * @Author: your name
+ * @Author: liuchenxi
  * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-27 14:09:17
+ * @LastEditTime: 2020-10-09 09:38:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\nuxt.config.js
@@ -10,10 +10,14 @@
 module.exports = {
   mode: 'universal',
   /*
+  ** disable Nuxt Telemetry
+  */
+  telemetry: false,
+  /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || 'GoodMorning',
+    title: process.env.npm_package_name || 'Good Morning',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1,user-scalable=no' },
