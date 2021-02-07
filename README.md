@@ -1,6 +1,7 @@
 # Blog-nuxt-master
 
 > 基于 Nuxt.js + Mysql + Express.js 的SSR个人博客网站
+> 开发中....
 
 ## Build Setup
 
