@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-09-22 09:07:32
- * @LastEditTime: 2020-09-29 16:12:01
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \nuxt-blog-master\nuxt-blog-master\server\index.js
- */
 import express from 'express'
 import consola from 'consola'
 import { Nuxt, Builder } from 'nuxt'
@@ -17,7 +9,7 @@ const port = process.env.PORT || 3000
 // app.set('port', port)
 app.proxy = true
 // Import API Routes
-let api = require('./api/index')(app)
+let api = require('./interface/index')(app)
 
 async function start () {
   // Import and Set Nuxt.js options
@@ -41,8 +33,7 @@ async function start () {
   // Listen the server
   app.listen(port, host)
   consola.ready({
-    message: `Server listening on
-    -local: http://${host}:${port}`,
+    message: `Server listening on local: http://${host}:${port}`,
     badge: true
   })
 }

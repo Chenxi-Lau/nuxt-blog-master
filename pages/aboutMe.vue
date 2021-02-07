@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-10 09:17:43
- * @LastEditTime: 2020-10-10 10:46:19
+ * @LastEditTime: 2021-02-04 19:59:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\pages\about.vue
@@ -64,6 +64,7 @@ export default {
   top: 0;
   left: 0;
   margin: 0 auto;
+  margin-top: 70px;
 
   .title {
     width: 100%;

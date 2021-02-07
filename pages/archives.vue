@@ -1,9 +1,9 @@
 <!--
  * @Author: liuchenxi
  * @Date: 2020-09-30 17:09:02
- * @LastEditTime: 2020-10-10 09:23:07
+ * @LastEditTime: 2021-02-05 16:33:05
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 文章的归档
  * @FilePath: \nuxt-blog-master\pages\tags.vue
 -->
 <template>
@@ -18,15 +18,11 @@
 </template>
 
 <script>
-import { getTagsList } from '@/api/index'
 export default {
-  name: 'tags',
-  async asyncData ({ error }) {
-    const { status, data: { code, dataList } } = await getTagsList()
-      .catch(error => {
-        error({ status: 400, msg: error })
-      })
-    if (status === 200 && code === '0') {
+  name: 'archives',
+  async asyncData ({ $axios }) {
+    const { code, data } = await $axios.$get('')
+    if (code === '0' && data) {
       return {
         tagsList: dataList
       }

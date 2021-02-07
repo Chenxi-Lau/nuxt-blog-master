@@ -1,15 +1,25 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-22 14:52:35
- * @LastEditTime: 2020-10-10 09:37:57
+ * @LastEditTime: 2021-02-05 16:33:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\components\header.vue
 -->
 <template>
-  <div class="header-container">
-    <div>
-      <el-avatar size="large" :src="circleUrl"></el-avatar>
+  <div class="header-wrapper">
+    <!-- <el-avatar size="mini" :src="circleUrl"></el-avatar> -->
+    <span class="header-name"> Morning's Blog </span>
+    <Breadcrumb></Breadcrumb>
+    <span class="header-nav">
+      <span>
+        <nuxt-link v-for="(item, index) in headerNav" :key="index" :to="item.href">
+          {{item.name}}
+        </nuxt-link>
+      </span>
+    </span>
+    <!-- <el-avatar size="large" :src="circleUrl"></el-avatar> -->
+    <!-- <el-avatar size="large" :src="circleUrl"></el-avatar>
       <h4>GoodMorning</h4>
       <h5>纸上得来终觉浅，绝知此事要躬行</h5>
       <ul class="header-title">
@@ -21,39 +31,38 @@
             {{item.name}}
           </nuxt-link>
         </li>
-      </ul>
-      <el-divider></el-divider>
-    </div>
+      </ul> -->
+    <!-- <el-divider></el-divider> -->
   </div>
 </template>
 
 <script>
+import Breadcrumb from '@/components/breadcrumb'
 export default {
-  name: 'default-header',
+  name: 'BlogHeader',
+  components: {
+    Breadcrumb
+  },
   data () {
     return {
       circleUrl: require('../assets/images/avatar.jpg'),
-      tags: [
+      headerNav: [
         {
-          name: '主页',
+          name: 'Home',
           href: '/',
           class: '#icon-zhuye-'
         }, {
-          name: '博文',
-          href: '/article',
+          name: '文章',
+          href: '/articles',
           class: '#icon-wenzhanglan'
         }, {
-          name: '标签',
+          name: '归档',
           href: '/tags',
           class: '#icon-biaoqianpai'
         }, {
           name: '关于',
-          href: '/about',
+          href: '/aboutMe',
           class: '#icon-nb-'
-        }, {
-          name: '搜索',
-          href: '/article',
-          class: '#icon-sousuo'
         }
       ]
     }
@@ -62,37 +71,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.header-container {
+@import '../assets/less/mixins.less';
+.header-wrapper {
+  position: fixed;
+  z-index: 999;
   width: 100%;
-  height: 360px;
-  text-align: center;
+  height: 60px;
+  top: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(233, 222, 222);
-  .el-avatar--large {
-    width: 100px;
-    height: 100px;
+  background: white;
+  .box-shadow-bottom();
+  .header-name {
+    .header-item();
+    float: left;
   }
-  .header-title {
-    width: 100%;
-    margin: 20px 0px;
-    padding-left: 0px;
-    .header-subtitle {
-      display: inline-block;
-      margin: 0 36px;
-      list-style: none;
-      .subtitle-link {
-        color: #ef5246;
-        outline: 0;
-        text-decoration: none;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        cursor: pointer;
-        &:hover {
-          color: red;
-        }
-      }
+  .header-nav {
+    .header-item();
+    &:span {
+      padding: 0px 6px;
     }
   }
 }

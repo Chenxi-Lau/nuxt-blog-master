@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-29 10:54:16
- * @LastEditTime: 2020-10-10 10:55:48
+ * @LastEditTime: 2021-02-05 16:02:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \nuxt-blog-master\components\footer.vue
@@ -33,35 +33,26 @@
         <i class="el-icon-top"></i></a>
     </div>
     <div class='footer-copyright'>
-      Copyright © 2020 - 2020 GoodMorning. All Rights Reserved.
+      Copyright © 2020 - 2021 GoodMorning. All Rights Reserved.
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: ''
+  name: 'BlogFooter'
 }
 </script>
 
 <style lang="less" scoped>
+@import '../assets/less/mixins.less';
 .footer-container {
   width: 100%;
   height: 90px;
-  position: relative;
-  // margin-top: -90px;
-  color: whitesmoke;
   text-align: center;
   clear: both;
   .footer-contact {
     padding: 6px;
-    & a {
-      color: whitesmoke;
-      text-decoration: none;
-      &:hover {
-        color: aqua;
-      }
-    }
   }
   .footer-back2Top {
     position: absolute;
@@ -69,15 +60,6 @@ export default {
     height: 24px;
     border: 1px solid black;
     border-radius: 1px;
-    & a {
-      color: whitesmoke;
-      &:hover {
-        color: aqua;
-      }
-    }
-  }
-  .footer-copyright {
-    color: whitesmoke;
   }
 }
 </style>
